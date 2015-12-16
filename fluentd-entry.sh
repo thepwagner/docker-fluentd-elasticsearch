@@ -3,8 +3,8 @@
 # Expand template:
 eval "echo \"$(cat /fluentd/etc/fluent.conf)\"" \
 	> /tmp/fluent.conf
+mv -f /tmp/fluent.conf /fluentd/etc/fluent.conf
 
-
-cat /tmp/fluent.conf
-#fluentd -c /fluentd/etc/fluentd.conf
+# Start service:
+fluentd -c /fluentd/etc/fluent.conf
 
