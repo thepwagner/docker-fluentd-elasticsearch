@@ -1,6 +1,8 @@
 FROM fluent/fluentd:latest
 
-RUN gem install fluent-plugin-elasticsearch
+RUN gem install \
+	fluent-plugin-elasticsearch \
+	fluent-plugin-record-reformer
 
 ENV ELASTICSEARCH_HOST=localhost
 ENV ELASTICSEARCH_PORT=9200
